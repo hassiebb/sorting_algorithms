@@ -1,19 +1,5 @@
 # Sorting Algorithms
 
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSye8PCzadyBaQgXt8wKFEeq-zCkR4FJbGDUg&usqp=CAU)
-
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHSgZ8f8M4bBGI_iVE1_xVoelosvfQxIiQdw&usqp=CAU)
-
-Resources
-Read or watch:
-
-* [Sorting algorithm](https://en.wikipedia.org/wiki/Sorting_algorithm)
-* [Big O notation](https://stackoverflow.com/questions/487258/what-is-a-plain-english-explanation-of-big-o-notation)
-* [Sorting algorithms animations](https://www.toptal.com/developers/sorting-algorithms)
-* [15 sorting algorithms in 6 minutes (WARNING: The following video can trigger seizure/epilepsy. It is not required for the project, as it is only a funny visualization of different sorting algorithms)](https://www.youtube.com/watch?v=kPRA0W1kECg)
-* [CS50 Algorithms explanation in detail by David Malan](https://www.youtube.com/watch?v=yb0PY3LX2x8&t=2s)
-* [All about sorting algorithms](https://www.geeksforgeeks.org/sorting-algorithms/)
-
 ## General
 
 - Allowed editors: `vi`, `vim`, `emacs`
@@ -28,16 +14,6 @@ Read or watch:
 	_Don’t forget to push your header file_
 - All your header files should be include guarded
 - A list/array does not need to be sorted if its size is less than 2.
-
-## AIM :sunflower:
-- At least four different sorting algorithms
-- What is the Big O notation, and how to evaluate the time complexity of an algorithm
-- How to select the best sorting algorithm for a given input
-- What is a stable sorting algorithm
-
-## Tests :heavy_check_mark:
-
-* [tests](./tests): Folder of test files. 
 
 ## Helper Files :raised_hands:
 
