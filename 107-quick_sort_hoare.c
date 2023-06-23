@@ -34,26 +34,26 @@ void swap_ints(int *a, int *b)
  */
 int hoare_partition(int *array, size_t size, int head, int tail)
 {
-	int pivot, above, below;
+	int pivot, top, bottom;
 
 	pivot = array[tail];
-	for (above = head - 1, below = tail + 1; above < below;)
+	for (top = head - 1, bottom = tail + 1; top < bottom;)
 	{
 		do {
-			above++;
-		} while (array[above] < pivot);
+			top++;
+		} while (array[top] < pivot);
 		do {
-			below--;
-		} while (array[below] > pivot);
+			bottom--;
+		} while (array[bottom] > pivot);
 
-		if (above < below)
+		if (top < bottom)
 		{
-			swap_ints(array + above, array + below);
+			swap_ints(array + top, array + bottom);
 			print_array(array, size);
 		}
 	}
 
-	return (above);
+	return (top);
 }
 
 /**
