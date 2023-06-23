@@ -127,4 +127,4 @@ Read or watch:
   * Orders the deck from spades to diamonds and from aces to kings.
 
 ## Author
-© [INNOCENT CHARLES UDO](https://github.com/Innocentsax)
+© [Mohammad Hassieb](https://github.com/hassiebb)
