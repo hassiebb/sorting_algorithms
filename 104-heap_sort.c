@@ -27,16 +27,16 @@ void swap_ints(int *a, int *b)
  */
 void max_heapify(int *array, size_t size, size_t base, size_t root)
 {
-	size_t left, right, large;
+	size_t head, tail, large;
 
-	left = 2 * root + 1;
-	right = 2 * root + 2;
+	head = 2 * root + 1;
+	tail = 2 * root + 2;
 	large = root;
 
-	if (left < base && array[left] > array[large])
-		large = left;
-	if (right < base && array[right] > array[large])
-		large = right;
+	if (head < base && array[head] > array[large])
+		large = head;
+	if (tail < base && array[tail] > array[large])
+		large = tail;
 
 	if (large != root)
 	{

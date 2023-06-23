@@ -1,8 +1,8 @@
 #include "sort.h"
 
 void swap_ints(int *a, int *b);
-int hoare_partition(int *array, size_t size, int left, int right);
-void hoare_sort(int *array, size_t size, int left, int right);
+int hoare_partition(int *array, size_t size, int head, int tail);
+void hoare_sort(int *array, size_t size, int head, int tail);
 void quick_sort_hoare(int *array, size_t size);
 
 /**
@@ -24,20 +24,20 @@ void swap_ints(int *a, int *b)
  *                   according to the hoare partition scheme.
  * @array: The array of integers.
  * @size: The size of the array.
- * @left: The starting index of the subset to order.
- * @right: The ending index of the subset to order.
+ * @head: The starting index of the subset to order.
+ * @tail: The ending index of the subset to order.
  *
  * Return: The final partition index.
  *
  * Description: Uses the last element of the partition as the pivot.
  * Prints the array after each swap of two elements.
  */
-int hoare_partition(int *array, size_t size, int left, int right)
+int hoare_partition(int *array, size_t size, int head, int tail)
 {
 	int pivot, above, below;
 
-	pivot = array[right];
-	for (above = left - 1, below = right + 1; above < below;)
+	pivot = array[tail];
+	for (above = head - 1, below = tail + 1; above < below;)
 	{
 		do {
 			above++;
@@ -60,20 +60,20 @@ int hoare_partition(int *array, size_t size, int left, int right)
  * hoare_sort - Implement the quicksort algorithm through recursion.
  * @array: An array of integers to sort.
  * @size: The size of the array.
- * @left: The starting index of the array partition to order.
- * @right: The ending index of the array partition to order.
+ * @head: The starting index of the array partition to order.
+ * @tail: The ending index of the array partition to order.
  *
  * Description: Uses the Hoare partition scheme.
  */
-void hoare_sort(int *array, size_t size, int left, int right)
+void hoare_sort(int *array, size_t size, int head, int tail)
 {
 	int part;
 
-	if (right - left > 0)
+	if (tail - head > 0)
 	{
-		part = hoare_partition(array, size, left, right);
-		hoare_sort(array, size, left, part - 1);
-		hoare_sort(array, size, part, right);
+		part = hoare_partition(array, size, head, tail);
+		hoare_sort(array, size, head, part - 1);
+		hoare_sort(array, size, part, tail);
 	}
 }
 

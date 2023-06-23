@@ -1,8 +1,8 @@
 #include "sort.h"
 
 void swap_ints(int *a, int *b);
-int lomuto_partition(int *array, size_t size, int left, int right);
-void lomuto_sort(int *array, size_t size, int left, int right);
+int lomuto_partition(int *array, size_t size, int head, int tail);
+void lomuto_sort(int *array, size_t size, int head, int tail);
 void quick_sort(int *array, size_t size);
 
 /**
@@ -24,17 +24,17 @@ void swap_ints(int *a, int *b)
  *                    the lomuto partition scheme (last element as pivot).
  * @array: The array of integers.
  * @size: The size of the array.
- * @left: The starting index of the subset to order.
- * @right: The ending index of the subset to order.
+ * @head: The starting index of the subset to order.
+ * @tail: The ending index of the subset to order.
  *
  * Return: The final partition index.
  */
-int lomuto_partition(int *array, size_t size, int left, int right)
+int lomuto_partition(int *array, size_t size, int head, int tail)
 {
 	int *pivot, above, below;
 
-	pivot = array + right;
-	for (above = below = left; below < right; below++)
+	pivot = array + tail;
+	for (above = below = head; below < tail; below++)
 	{
 		if (array[below] < *pivot)
 		{
@@ -60,20 +60,20 @@ int lomuto_partition(int *array, size_t size, int left, int right)
  * lomuto_sort - Implement the quicksort algorithm through recursion.
  * @array: An array of integers to sort.
  * @size: The size of the array.
- * @left: The starting index of the array partition to order.
- * @right: The ending index of the array partition to order.
+ * @head: The starting index of the array partition to order.
+ * @tail: The ending index of the array partition to order.
  *
  * Description: Uses the Lomuto partition scheme.
  */
-void lomuto_sort(int *array, size_t size, int left, int right)
+void lomuto_sort(int *array, size_t size, int head, int tail)
 {
 	int part;
 
-	if (right - left > 0)
+	if (tail - head > 0)
 	{
-		part = lomuto_partition(array, size, left, right);
-		lomuto_sort(array, size, left, part - 1);
-		lomuto_sort(array, size, part + 1, right);
+		part = lomuto_partition(array, size, head, tail);
+		lomuto_sort(array, size, head, part - 1);
+		lomuto_sort(array, size, part + 1, tail);
 	}
 }
 
